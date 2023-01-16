@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SofaScoreApi.Client
 {
-    public class ApiSettings
+    public class ApiHelper
     {
         public string Host => "https://api.sofascore.com/";
         public string LiveEndpoint => Host + "api/v1/sport/football/events/live";

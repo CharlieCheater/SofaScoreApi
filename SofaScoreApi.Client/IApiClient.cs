@@ -5,5 +5,5 @@ namespace SofaScoreApi.Client;
 public interface IApiClient : IDisposable
 {
     IEventContext<SportEvent> EventContext { get; }
-    ApiSettings Settings { get; }
+    ApiHelper Settings { get; }
 }

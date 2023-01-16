@@ -4,11 +4,11 @@ namespace SofaScoreApi.Client.Service.MessageService;
 
 public class MessageParser : IMessageParser
 {
-    public readonly string Pattern = @"^(MSG)\s([\w.]+)\s(\d)\s(\d+)\s(\{[^}]*\})";
+    private string _pattern = @"^(MSG)\s([\w.]+)\s(\d)\s(\d+)\s(\{[^}]*\})";
 
     public IMessage Parse(string response)
     {
-        var groups = Regex.Match(response, Pattern).Groups;
+        var groups = Regex.Match(response, _pattern).Groups;
         MessageType messageType = GetMessageType(groups[(int)ParseType.MessageType].Value);
 
         if(messageType == MessageType.Unknown)
