@@ -1,6 +1,6 @@
 ﻿namespace SofaScoreApi.Client.Service.EventService;
 
-public interface IEventContext<T>
+public interface IEventContext<out T>
 {
     public T GetAll();
     public T GetById(int id);
