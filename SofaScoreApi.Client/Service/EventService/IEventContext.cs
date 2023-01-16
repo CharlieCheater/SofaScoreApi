@@ -1,9 +1,8 @@
 ﻿namespace SofaScoreApi.Client.Service.EventService;
 
-public interface IEventContext<out T>
+public interface IEventContext<T>
 {
-    public T GetAll();
-    public T GetById(int id);
-    public T GetLine(DateOnly date);
-    public T GetLive();
+    public Task<T> GetByIdAsync(int id);
+    public Task<IEnumerable<T>> GetLineAsync(DateOnly date);
+    public Task<IEnumerable<T>> GetLiveAsync();
 }
