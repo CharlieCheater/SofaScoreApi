@@ -5,9 +5,9 @@ namespace SofaScoreApi.Client;
 
 public class ApiClient : IApiClient
 {
-    private ApiHelper _settings;
+    private readonly ApiHelper _settings;
     private readonly HttpClient _client;
-    private bool _disposed = false;
+    private bool _disposed;
     public IEventContext<SportEvent> EventContext { get; init; }
 
     public ApiHelper Settings => _settings;

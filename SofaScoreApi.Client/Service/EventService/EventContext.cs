@@ -5,8 +5,8 @@ namespace SofaScoreApi.Client.Service.EventService;
 
 internal class EventContext : IEventContext<SportEvent>
 {
-    private ApiHelper _apiHelper;
-    private HttpClient _httpClient;
+    private readonly ApiHelper _apiHelper;
+    private readonly HttpClient _httpClient;
     public EventContext(HttpClient client, ApiHelper apiHelper)
     {
         if (client is null)
