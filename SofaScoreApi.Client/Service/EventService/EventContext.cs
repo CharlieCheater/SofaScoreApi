@@ -28,7 +28,7 @@ internal class EventContext : IEventContext<SportEvent>
         return result["event"];
     }
 
-    public async Task<IEnumerable<SportEvent>> GetLineAsync(DateOnly date = DateOnly.FromDateTime(DateTime.UtcNow))
+    public async Task<IEnumerable<SportEvent>> GetLineAsync(DateOnly date)
     {
         var lineEndpoint = _apiHelper.GetLineEndpoint(date);
         var result = await _httpClient.GetFromJsonAsync<Dictionary<string, List<SportEvent>>>(lineEndpoint);
