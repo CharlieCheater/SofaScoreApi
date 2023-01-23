@@ -4,7 +4,7 @@ namespace SofaScoreApi.Client.Service.MessageService;
 
 public class MessageParser : IMessageParser
 {
-    private string _pattern = @"^(MSG)\s([\w.]+)\s(\d)\s(\d+)\s(\{[^}]*\})";
+    private readonly string _pattern = @"^(MSG)\s([\w.]+)\s(\d)\s(\d+)\s(\{[^}]*\})";
 
     public IMessage Parse(string response)
     {

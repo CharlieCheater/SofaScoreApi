@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SofaScoreApi.Client.Models
+namespace SofaScoreApi.DAL.Models
 {
     public class Statistic
     {

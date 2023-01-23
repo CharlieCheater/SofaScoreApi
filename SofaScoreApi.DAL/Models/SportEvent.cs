@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
-namespace SofaScoreApi.Client.Models;
+namespace SofaScoreApi.DAL.Models;
 
 public class SportEvent
 {
@@ -14,9 +14,9 @@ public class SportEvent
     public bool HasEventPlayerStatistics { get; set; }
     public bool HasEventPlayerHeatMap { get; set; }
     public bool HasGlobalHighlights { get; set; }
-    [JsonProperty("homeTeam")]
+    [JsonPropertyName("homeTeam")]
     public Team Home { get; set; }
-    [JsonProperty("awayTeam")]
+    [JsonPropertyName("awayTeam")]
     public Team Away { get; set; }
 
     public Score HomeScore { get; set; }

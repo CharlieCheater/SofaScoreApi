@@ -1,5 +1,5 @@
-﻿using SofaScoreApi.Client.Models;
-using SofaScoreApi.Client.Service.EventService;
+﻿using SofaScoreApi.Client.Service.EventService;
+using SofaScoreApi.DAL.Models;
 
 namespace SofaScoreApi.Client;
 public interface IApiClient : IDisposable
