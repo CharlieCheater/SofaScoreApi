@@ -10,3 +10,10 @@ This library is designed to get soccer events from the SofaScore service and det
 ```c#
 using SofaScoreApi.Client;
 ```
+## Get soccer events
+```c#
+ApiClient apiClient = new ApiClient();
+DateOnly date = DateOnly.FromDateTime(DateTime.Now);
+var line = await apiClient.EventContext.GetLineAsync(date);
+var live = await apiClient.EventContext.GetLiveAsync();
+```
