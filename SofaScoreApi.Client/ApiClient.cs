@@ -1,4 +1,5 @@
 ﻿using SofaScoreApi.Client.Service.EventService;
+using SofaScoreApi.Client.Service.StatisticService;
 using SofaScoreApi.DAL.Models;
 
 namespace SofaScoreApi.Client;
@@ -9,6 +10,7 @@ public class ApiClient : IApiClient
     private readonly HttpClient _client;
     private bool _disposed;
     public IEventContext<SportEvent> EventContext { get; init; }
+    public IStatisticContext<Statistic> StatisticContext { get; init; }
 
     public ApiHelper Settings => _settings;
     public ApiClient()
@@ -19,6 +21,7 @@ public class ApiClient : IApiClient
             BaseAddress = new Uri(_settings.Host)
         };
         EventContext = new EventContext(_client, Settings);
+        StatisticContext = new StatisticContext(_client, Settings);
     }
     public virtual void Dispose(bool disposing)
     {

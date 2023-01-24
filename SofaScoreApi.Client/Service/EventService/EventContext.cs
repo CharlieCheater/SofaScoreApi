@@ -3,24 +3,12 @@ using System.Net.Http.Json;
 
 namespace SofaScoreApi.Client.Service.EventService;
 
-internal class EventContext : IEventContext<SportEvent>
+internal class EventContext : ApiContext, IEventContext<SportEvent>
 {
-    private readonly ApiHelper _apiHelper;
-    private readonly HttpClient _httpClient;
-    public EventContext(HttpClient client, ApiHelper apiHelper)
+    public EventContext(HttpClient httpClient, ApiHelper apiHelper) : base(httpClient, apiHelper)
     {
-        if (client is null)
-        {
-            throw new ArgumentNullException(nameof(client));
-        }
-        if (apiHelper is null)
-        {
-            throw new ArgumentNullException(nameof(apiHelper));
-        }
-
-        _httpClient = client;
-        _apiHelper = apiHelper;
     }
+
     public async Task<SportEvent> GetByIdAsync(int id)
     {
         var eventEndpoint = _apiHelper.GetEventDetailEndpoint(id);

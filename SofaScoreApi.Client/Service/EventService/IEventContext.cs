@@ -2,7 +2,7 @@
 
 public interface IEventContext<T>
 {
-    public Task<T> GetByIdAsync(int id);
-    public Task<IEnumerable<T>> GetLineAsync(DateOnly date);
-    public Task<IEnumerable<T>> GetLiveAsync();
+    Task<T> GetByIdAsync(int id);
+    Task<IEnumerable<T>> GetLineAsync(DateOnly date);
+    Task<IEnumerable<T>> GetLiveAsync();
 }
