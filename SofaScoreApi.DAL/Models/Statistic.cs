@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SofaScoreApi.DAL.Enums;
+using SofaScoreApi.Infrastructure;
+using System.Text.Json.Serialization;
 
-namespace SofaScoreApi.DAL.Models
+namespace SofaScoreApi.DAL.Models;
+
+public class Statistic
 {
-    public class Statistic
-    {
-        public string Name { get; set; }
-        public string Home { get; set; }
-        public string Away { get;set; }
-    }
+    public PeriodType Period { get; set; }
+    public List<GroupStatistics> Groups { get; set; }
 }
