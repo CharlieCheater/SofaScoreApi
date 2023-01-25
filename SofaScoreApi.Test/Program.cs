@@ -2,7 +2,7 @@
 
 ApiClient apiClient = new ApiClient();
 
-var eventId = 10230582; // World Championship Japan - Croatia
+var eventId = 10230582; // Soccer World Cup. Japan - Croatia
 var soccer = await apiClient.EventContext.GetByIdAsync(eventId);
 var statistics = await apiClient.StatisticContext.GetByEventIdAsync(eventId);
 var line = await apiClient.EventContext.GetLineAsync(DateOnly.FromDateTime(DateTime.UtcNow));
