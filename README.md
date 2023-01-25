@@ -23,6 +23,6 @@ var live = await apiClient.EventContext.GetLiveAsync();
 ```c#
 ApiClient apiClient = new ApiClient();
 
-var eventId = 10230582; // World Championship Japan - Croatia
+var eventId = 10230582; // Soccer World Cup. Japan - Croatia
 var statistics = apiClient.StatisticContext.GetByEventIdAsync()
 ```
