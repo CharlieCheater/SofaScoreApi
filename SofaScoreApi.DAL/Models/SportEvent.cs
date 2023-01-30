@@ -1,11 +1,13 @@
-﻿using System.Text.Json.Serialization;
+﻿using SofaScoreApi.DAL.Enums;
+using System.Text.Json.Serialization;
 
 namespace SofaScoreApi.DAL.Models;
 
 public class SportEvent
 {
     public int Id { get; set; }
-    public int WinnerCode { get; set; }
+    [JsonPropertyName("winnerCode")]
+    public WinnerType Winner { get; set; }
     public string CustomId { get; set; }
     public string Slug { get; set; }
     public string LastPeriod { get; set; }
